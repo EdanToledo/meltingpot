@@ -453,6 +453,7 @@ def get_config():
   config.individual_observation_names = [
       "RGB",
       "READY_TO_SHOOT",
+      "POSITION"
   ]
   config.global_observation_names = [
       "WORLD.RGB",
@@ -463,6 +464,7 @@ def get_config():
   config.timestep_spec = specs.timestep({
       "RGB": specs.OBSERVATION["RGB"],
       "READY_TO_SHOOT": specs.OBSERVATION["READY_TO_SHOOT"],
+      "POSITION": specs.OBSERVATION["POSITION"],
       # Debug only (do not use the following observations in policies).
       "WORLD.RGB": specs.rgb(216, 216),
   })

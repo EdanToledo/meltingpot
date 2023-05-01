@@ -469,6 +469,7 @@ def get_config():
       "RGB",
       # Global switching signals for puppeteers.
       "MISMATCHED_COIN_COLLECTED_BY_PARTNER",
+      "POSITION"
   ]
   config.global_observation_names = [
       "WORLD.RGB"
@@ -480,6 +481,7 @@ def get_config():
       "RGB": specs.OBSERVATION["RGB"],
       # Switching signals for puppeteers.
       "MISMATCHED_COIN_COLLECTED_BY_PARTNER": specs.float64(),
+      "POSITION": specs.OBSERVATION["POSITION"],
       # Debug only (do not use the following observations in policies).
       "WORLD.RGB": specs.rgb(136, 136),
   })

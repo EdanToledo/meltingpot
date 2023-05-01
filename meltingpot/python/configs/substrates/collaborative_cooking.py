@@ -912,6 +912,7 @@ def get_config():
   # Observation format configuration.
   config.individual_observation_names = [
       "RGB",
+      "POSITION",
   ]
   config.global_observation_names = [
       "WORLD.RGB",
