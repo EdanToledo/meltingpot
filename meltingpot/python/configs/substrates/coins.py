@@ -37,9 +37,9 @@ MANDATED_NUM_PLAYERS = 2
 COIN_PALETTES = {
     "coin_red": shapes.get_palette((238, 102, 119)),    # Red.
     "coin_blue": shapes.get_palette((68, 119, 170)),    # Blue.
-    "coin_yellow": shapes.get_palette((204, 187, 68)),  # Yellow.
-    "coin_green": shapes.get_palette((34, 136, 51)),    # Green.
-    "coin_purple": shapes.get_palette((170, 51, 119))   # Purple.
+    # "coin_yellow": shapes.get_palette((204, 187, 68)),  # Yellow.
+    # "coin_green": shapes.get_palette((34, 136, 51)),    # Green.
+    # "coin_purple": shapes.get_palette((170, 51, 119))   # Purple.
 }
 
 
