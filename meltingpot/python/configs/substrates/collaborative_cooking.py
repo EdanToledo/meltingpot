@@ -36,6 +36,7 @@ from meltingpot.python.utils.substrates import specs
 
 # Warning: setting `_ENABLE_DEBUG_OBSERVATIONS = True` may cause slowdown.
 _ENABLE_DEBUG_OBSERVATIONS = False
+_ENABLE_LOCATION_OBSERVER = True
 
 COOKING_TIME = 20
 items = ["empty", "tomato", "dish", "soup"]
@@ -848,11 +849,12 @@ def create_avatar_object(player_idx: int,
           {"component": "AvatarCumulants",},
       ]
   }
-  if _ENABLE_DEBUG_OBSERVATIONS:
+  if _ENABLE_LOCATION_OBSERVER:
     avatar_object["components"].append({
         "component": "LocationObserver",
         "kwargs": {"objectIsAvatar": True, "alsoReportOrientation": True},
     })
+  if _ENABLE_DEBUG_OBSERVATIONS:
     avatar_object["components"].append({
         "component": "AvatarMetricReporter",
         "kwargs": {

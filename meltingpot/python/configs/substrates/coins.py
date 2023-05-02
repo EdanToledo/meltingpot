@@ -31,6 +31,7 @@ PrefabConfig = game_object_utils.PrefabConfig
 
 # Warning: setting `_ENABLE_DEBUG_OBSERVATIONS = True` may cause slowdown.
 _ENABLE_DEBUG_OBSERVATIONS = False
+_ENABLE_LOCATION_OBSERVER = True
 
 MANDATED_NUM_PLAYERS = 2
 
@@ -360,11 +361,12 @@ def get_avatar(coin_type: str):
           "variable": "partnerCollectedMismatch",
       },
   ]
-  if _ENABLE_DEBUG_OBSERVATIONS:
+  if _ENABLE_LOCATION_OBSERVER:
     avatar_object["components"].append({
         "component": "LocationObserver",
         "kwargs": {"objectIsAvatar": True, "alsoReportOrientation": True},
     })
+  if _ENABLE_DEBUG_OBSERVATIONS:
     # Debug metrics
     metrics.append({
         "name": "MATCHED_COIN_COLLECTED",
@@ -490,6 +492,7 @@ def get_config():
   # The roles assigned to each player.
   config.valid_roles = frozenset({"default"})
   config.default_player_roles = ("default",) * MANDATED_NUM_PLAYERS
+
 
   return config
 

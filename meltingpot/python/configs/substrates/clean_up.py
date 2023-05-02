@@ -52,6 +52,7 @@ PrefabConfig = game_object_utils.PrefabConfig
 
 # Warning: setting `_ENABLE_DEBUG_OBSERVATIONS = True` may cause slowdown.
 _ENABLE_DEBUG_OBSERVATIONS = False
+_ENABLE_LOCATION_OBSERVER = True
 
 ASCII_MAP = """
 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
@@ -749,11 +750,12 @@ def create_avatar_object(player_idx: int,
           "variable": "num_others_who_cleaned_this_step",
       },
   ]
-  if _ENABLE_DEBUG_OBSERVATIONS:
+  if _ENABLE_LOCATION_OBSERVER:
     avatar_object["components"].append({
         "component": "LocationObserver",
         "kwargs": {"objectIsAvatar": True, "alsoReportOrientation": True},
     })
+  if _ENABLE_DEBUG_OBSERVATIONS:
     # Debug metrics
     metrics.append({
         "name": "PLAYER_CLEANED",

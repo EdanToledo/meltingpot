@@ -43,6 +43,7 @@ from meltingpot.python.utils.substrates import specs
 
 # Warning: setting `_ENABLE_DEBUG_OBSERVATIONS = True` may cause slowdown.
 _ENABLE_DEBUG_OBSERVATIONS = False
+_ENABLE_LOCATION_OBSERVER = True
 
 NUM_ORE_TYPES = 2
 MAX_TOKENS_PER_TYPE = 6
@@ -396,7 +397,7 @@ def get_avatar_object(num_players: int, player_index: int):
           },
       ]
   }
-  if _ENABLE_DEBUG_OBSERVATIONS:
+  if _ENABLE_LOCATION_OBSERVER:
     avatar_object["components"].append({
         "component": "LocationObserver",
         "kwargs": {"objectIsAvatar": True, "alsoReportOrientation": True},
