@@ -466,10 +466,10 @@ def get_config():
 
   # Observation format configuration.
   config.individual_observation_names = [
-      "RGB",
-      # Global switching signals for puppeteers.
-      "MISMATCHED_COIN_COLLECTED_BY_PARTNER",
-      "POSITION"
+    "POSITION", 
+    "RGB",
+    # Global switching signals for puppeteers.
+    "MISMATCHED_COIN_COLLECTED_BY_PARTNER",
   ]
   config.global_observation_names = [
       "WORLD.RGB"
@@ -478,10 +478,11 @@ def get_config():
   # The specs of the environment (from a single-agent perspective).
   config.action_spec = specs.action(len(ACTION_SET))
   config.timestep_spec = specs.timestep({
+        "POSITION": specs.OBSERVATION["POSITION"],
       "RGB": specs.OBSERVATION["RGB"],
       # Switching signals for puppeteers.
       "MISMATCHED_COIN_COLLECTED_BY_PARTNER": specs.float64(),
-      "POSITION": specs.OBSERVATION["POSITION"],
+      
       # Debug only (do not use the following observations in policies).
       "WORLD.RGB": specs.rgb(136, 136),
   })
