@@ -478,7 +478,7 @@ def get_config():
   # The specs of the environment (from a single-agent perspective).
   config.action_spec = specs.action(len(ACTION_SET))
   config.timestep_spec = specs.timestep({
-        "POSITION": specs.OBSERVATION["POSITION"],
+      "POSITION": specs.OBSERVATION["POSITION"],
       "RGB": specs.OBSERVATION["RGB"],
       # Switching signals for puppeteers.
       "MISMATCHED_COIN_COLLECTED_BY_PARTNER": specs.float64(),

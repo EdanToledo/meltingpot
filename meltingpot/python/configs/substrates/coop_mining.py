@@ -452,8 +452,8 @@ def get_config():
   # Observation format configuration.
   config.individual_observation_names = [
       "RGB",
+      "POSITION",
       "READY_TO_SHOOT",
-      "POSITION"
   ]
   config.global_observation_names = [
       "WORLD.RGB",
@@ -463,15 +463,15 @@ def get_config():
   config.action_spec = specs.action(len(ACTION_SET))
   config.timestep_spec = specs.timestep({
       "RGB": specs.OBSERVATION["RGB"],
-      "READY_TO_SHOOT": specs.OBSERVATION["READY_TO_SHOOT"],
       "POSITION": specs.OBSERVATION["POSITION"],
+      "READY_TO_SHOOT": specs.OBSERVATION["READY_TO_SHOOT"],
       # Debug only (do not use the following observations in policies).
       "WORLD.RGB": specs.rgb(216, 216),
   })
 
   # The roles assigned to each player.
   config.valid_roles = frozenset({"default", "target"})
-  config.default_player_roles = ("default",) * 6
+  config.default_player_roles = ("default",) * 4
 
   return config
 

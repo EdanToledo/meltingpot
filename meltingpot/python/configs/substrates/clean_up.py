@@ -813,6 +813,7 @@ def get_config():
   # Observation format configuration.
   config.individual_observation_names = [
       "RGB",
+      "POSITION",
       "READY_TO_SHOOT",
       # Global switching signals for puppeteers.
       "NUM_OTHERS_WHO_CLEANED_THIS_STEP",
@@ -825,6 +826,7 @@ def get_config():
   config.action_spec = specs.action(len(ACTION_SET))
   config.timestep_spec = specs.timestep({
       "RGB": specs.OBSERVATION["RGB"],
+      "POSITION": specs.OBSERVATION["POSITION"],
       "READY_TO_SHOOT": specs.OBSERVATION["READY_TO_SHOOT"],
       # Global switching signals for puppeteers.
       "NUM_OTHERS_WHO_CLEANED_THIS_STEP": specs.float64(),
