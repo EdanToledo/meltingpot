@@ -672,7 +672,7 @@ def create_cooking_pot(time_to_cook, reward=1):
   return cooking_pot
 
 
-def create_prefabs(cooking_pot_pseudoreward: float = 0.0):
+def create_prefabs(cooking_pot_pseudoreward: float = 1.0):
   """Creates a dictionary mapping names to template game objects."""
   prefabs = {
       "spawn_point": SPAWN_POINT,
